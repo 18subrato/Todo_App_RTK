@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTask, updateTask } from '../features/todos/todoSlice'
 import Todo from './Todo';
 import toast from 'react-hot-toast';
+import { RiCalendarTodoLine } from "react-icons/ri";
 const AddTodo = () => {
   
   const inputRef = useRef('');
@@ -44,7 +45,9 @@ const AddTodo = () => {
     <div className='bg-white place-self-center w-11/12 max-w-md flex flex-col min-h-[550px] rounded-xl p-3'>
       <div className='items-center flex mt-10 gap-2'>
         <h1 className='text-4xl font-semibold'>TODO <span className='text-orange-500 underline'>APP</span></h1>
+        <RiCalendarTodoLine  className='w-8 h-8 mt-2 ml-4' />
       </div>
+      
       <div>
         <form onSubmit={handleFormSubmit} className='mt-7 flex items-center bg-gray-200 rounded-full my-7 '>
           <input ref={inputRef} className='bg-transparent bottom-0 outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600' type="text" placeholder={updateTodo.update == false ? 'Add Task':'Update Task'} />
